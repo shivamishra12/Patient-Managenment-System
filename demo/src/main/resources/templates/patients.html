@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Patient Management System</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .box {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 60%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+            width: 200px;
+        }
+
+        button {
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+
+        a {
+            color: red;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Patient Management System</h2>
+
+<div class="box">
+    <h3>Add Patient</h3>
+
+    <form action="/add" method="post">
+        <input type="number" name="id" placeholder="Patient ID" required>
+        <input type="text" name="name" placeholder="Patient Name" required>
+        <input type="text" name="disease" placeholder="Disease" required>
+        <br><br>
+        <button type="submit">Add Patient</button>
+    </form>
+</div>
+
+<div class="box">
+    <h3>Update Patient</h3>
+
+    <form action="/update" method="post">
+        <input type="number" name="id" placeholder="Patient ID" required>
+        <input type="text" name="name" placeholder="New Name" required>
+        <input type="text" name="disease" placeholder="New Disease" required>
+        <br><br>
+        <button type="submit">Update Patient</button>
+    </form>
+</div>
+
+<div class="box">
+    <h3>Patients List</h3>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Disease</th>
+            <th>Action</th>
+        </tr>
+
+        <tr th:each="p : ${patients}">
+            <td th:text="${p.id}"></td>
+            <td th:text="${p.name}"></td>
+            <td th:text="${p.disease}"></td>
+            <td>
+                <a th:href="@{/delete/{id}(id=${p.id})}">Delete</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
