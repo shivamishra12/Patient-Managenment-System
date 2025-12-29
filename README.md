@@ -1,2 +1,31 @@
-# Patient-Managenment-System
-This project is a simple Patient Management System developed using Spring Boot. It implements CRUD operations without using a database, storing data in memory with an ArrayList. The frontend is built using HTML and CSS with Thymeleaf, and the application follows the MVC architecture. This project is intended for academic and learning purposes.
+# 🏥 Patient Management System (Spring Boot)
+
+A simple **Patient Management CRUD Application** built using **Spring Boot** without using any database.  
+Patient data is stored in-memory using an **ArrayList** and the frontend is implemented using **HTML + CSS with Thymeleaf**.
+
+---
+
+## 📌 Features
+- Add Patient
+- View All Patients
+- Update Patient Details
+- Delete Patient
+- No Database (In-Memory Storage)
+- MVC Architecture
+- Frontend + Backend Integrated
+
+---
+
+## 🛠️ Technologies Used
+- Java
+- Spring Boot
+- Spring MVC
+- Thymeleaf
+- HTML
+- CSS
+- Maven
+- IntelliJ IDEA
+
+---
+
+## 📂 Project Structure
